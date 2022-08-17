@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Context } from "../services/Provider";
+
 import App from "views/app";
+
 const IndexPage = ({ location: page }) => {
   return (
     <Context.Consumer>
@@ -11,4 +13,7 @@ const IndexPage = ({ location: page }) => {
 
 export default IndexPage;
 
-export const Head = () => <title>Home Page</title>;
+export const Head = (props) => {
+  console.log(props);
+  return <title>Apt Home Assistant</title>;
+};
