@@ -1,3 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+$primary-color: #a1d5b1;
+$secondary-color: #D0ECD9;
+$background-color: #f6f8ff;
+$font-family: "Poppins";
+:root {
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -72,4 +83,17 @@ select {
     scroll-behavior: auto !important;
   }
 }
-
+/* App styles */
+html,
+body {
+  font: 112.5%/1.45em $font-family, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  background: $background-color;
+  padding-bottom: env(safe-area-inset-bottom);
+  margin: 0;
+  // font: 112.5%/1.45em georgia, serif;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}

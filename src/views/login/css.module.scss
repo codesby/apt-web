@@ -1,23 +1,23 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 
-html,
-body {
-  position: relative;
-  min-height: 100vh;
-  background-color: #e1e8ee;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+// html,
+// body {
+//   position: relative;
+//   min-height: 100vh;
+//   background-color: #e1e8ee;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
 
 .container {
-  background-color: #222;
-  border-radius: 15px;
-  height: 550px;
-  width: 350px;
+  background-color: var(--secondary-color);
+  // border-radius: 15px;
+  height: 100vh; //550px;
+  // width: 350px;
   position: relative;
   overflow: hidden;
 
@@ -29,10 +29,10 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    background-repeat: no-repeat;
+    // background-repeat: no-repeat;
     // background-position: left bottom;
-    background-size: 800px;
-    background-image: url("images/living-room.jpg");
+    // background-size: 1480px;
+    // background-image: url("images/living-room.jpg");
   }
 
   .signup {
@@ -112,7 +112,7 @@ body {
     }
 
     button {
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: var(--primary-color);
       color: rgba(256, 256, 256, 0.7);
       border: 0;
       border-radius: 15px;
@@ -129,7 +129,8 @@ body {
 
       &:hover {
         transition: all 0.3s ease;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: var(--primary-color);
+        opacity: 0.8;
       }
     }
   }

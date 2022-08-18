@@ -1,9 +1,9 @@
 import React from "react";
 import { Router } from "@reach/router";
-
+import { navigate } from "gatsby";
+import Layout from "components/layout";
 import Home from "views/home";
 import Login from "views/login";
-import { navigate } from "gatsby";
 
 const App = ({ context, page }) => {
   //https://www.gatsbyjs.com/docs/how-to/routing/client-only-routes-and-user-authentication/
@@ -15,11 +15,14 @@ const App = ({ context, page }) => {
     navigate("/"); //navigate to the home page if user is authenticated but trues to access to login page
     return;
   }
+
   return (
-    <Router basepath="/">
-      <Home path="/" />
-      <Login path="/login" />
-    </Router>
+    <Layout>
+      <Router basepath="/">
+        <Home path="/" />
+        <Login path="/login" />
+      </Router>
+    </Layout>
   );
 };
 export default App;
