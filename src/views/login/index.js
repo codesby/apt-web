@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import * as css from "./css.module.scss";
-
+import Button from "components/button";
 const Login = (props) => {
   useEffect(() => {
     console.clear();
@@ -18,7 +18,7 @@ const Login = (props) => {
           signupBtn.parentNode.classList.add(css.slideUp);
           parent.classList.remove(css.slideUp);
         }
-        return null
+        return null;
       });
     });
 
@@ -31,12 +31,13 @@ const Login = (props) => {
           loginBtn.parentNode.parentNode.classList.add(css.slideUp);
           parent.classList.remove(css.slideUp);
         }
-        return null
+        return null;
       });
     });
   });
   return (
     <div class={`${css.container}`}>
+      <Button primary />
       <div class={`${css.signup}`}>
         <h2 id="signup">
           <span>or</span>Sign up
