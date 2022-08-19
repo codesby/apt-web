@@ -4,22 +4,36 @@
   font-style: normal;
   font-weight: 300;
   font-size: 32px;
-  line-height: 48px;
-  /* identical to box height */
 
   text-align: center;
 
   color: #445f53;
 }
+.main {
+  display: inline-block;
+  width: 300px;
+  border: 2px solid red;
+  margin: 5px;
+  text-align: center;
+}
 
+.optionsDiv {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  margin: 5px;
+}
 .options {
   display: inline-block;
   background: #edbaa5;
   width: 80px;
   height: 120px;
-  margin: 7px;
+  margin-right: 7px;
+  margin-left: 7px;
+  margin-bottom: 5px;
   border-radius: 10px;
   text-align: center;
+  position: relative;
 }
 
 .options > label > input {
@@ -38,21 +52,13 @@
   color: white;
 }
 
-.main {
-  display: block;
-  width: 300px;
-  border: 2px solid red;
-  margin: 5px;
-}
-
 .settingsButton {
   display: inline-block;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
+  margin: 5px;
   font-size: 24px;
-  line-height: 36px;
-  /* identical to box height */
   padding: 10px 20px 10px 20px;
   text-align: center;
   color: #ffffff;
