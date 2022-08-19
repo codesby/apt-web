@@ -10,6 +10,17 @@
   color: #445f53;
 }
 
+.semiCircleDiv {
+  background: #f8f9f5;
+  height: 200px;
+  width: 200px;
+  position: relative;
+  left: 50px;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  z-index: -1;
+  margin-bottom: -20px;
+}
 .main {
   display: inline-block;
   width: 300px;
@@ -19,7 +30,7 @@
 }
 
 .slantDiv {
-  margin-top: 100px;
+  //   margin-top: 100px;
   background: #f1ccaf;
   height: 100%;
   width: 100%;

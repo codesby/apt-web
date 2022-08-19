@@ -24,6 +24,9 @@ const Device = ({ deviceName }) => {
   return (
     <div className={css.main}>
       <p className={css.deviceName}>{deviceName}</p>
+      <div className={css.semiCircleDiv}>
+        <p>Some text</p>
+      </div>
       <div className={css.slantDiv}>
         <div style={{ verticalAlign: "center" }}>
           <span>
@@ -67,6 +70,7 @@ const Device = ({ deviceName }) => {
             {"  "}
             {30.7} kwH
           </p>
+
           <p className={css.usageCount}>
             <svg
               width="12"
