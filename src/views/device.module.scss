@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+.deviceName {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 48px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #445f53;
+}
+
+.options {
+  display: inline-block;
+  background: #edbaa5;
+  width: 80px;
+  height: 120px;
+  margin: 7px;
+  border-radius: 10px;
+}
+
+.options > label {
+  text-align: center;
+}
+
+.options > input {
+  height: 120px;
+  width: 80px;
+  cursor: pointer;
+  display: none;
+}
+
+.main {
+  display: block;
+  width: 300px;
+  border: 2px solid red;
+  margin: 5px;
+}
+
+.settingsButton {
+  display: inline-block;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  /* identical to box height */
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  color: #ffffff;
+  background: #e28185;
+  border-radius: 10px;
+}
