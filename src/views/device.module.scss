@@ -19,17 +19,23 @@
   height: 120px;
   margin: 7px;
   border-radius: 10px;
-}
-
-.options > label {
   text-align: center;
 }
 
-.options > input {
-  height: 120px;
-  width: 80px;
-  cursor: pointer;
+.options > label > input {
   display: none;
+}
+
+.options > label > input[type="checkbox"]:not(:checked) ~ p {
+  color: #bf9381;
+}
+.icons {
+  vertical-align: center;
+  margin: 15px;
+}
+
+.options > label > input[type="checkbox"]:checked ~ p {
+  color: white;
 }
 
 .main {
