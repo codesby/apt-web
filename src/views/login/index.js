@@ -1,66 +1,89 @@
 import React, { useEffect } from "react";
 import * as css from "./css.module.scss";
-import Button from "components/button";
-const Login = (props) => {
+import { LoadingButton } from "components/button";
+import Form from "components/form";
+const Login = ({ context }) => {
+  const _loadingBtn = React.createRef();
+  const onLogin = ({ email, password }) => {
+    _loadingBtn.current.setLoading(true);
+    context.auth
+      .login({ email, password })
+      .then((user) => {
+        if (!user) alert("Login Failed!");
+        else window.location.replace("/");
+      })
+      .catch((err) => {
+        alert("Login failed due to an error!");
+        console.log(err);
+      })
+      .finally(() => {
+        if (_loadingBtn.current) _loadingBtn.current.setLoading(false);
+      });
+  };
+  const onSignUp = (data) => {};
   useEffect(() => {
-    console.clear();
-
+    context.loading(false);
     const loginBtn = document.getElementById("login");
     const signupBtn = document.getElementById("signup");
 
-    loginBtn.addEventListener("click", (e) => {
-      let parent = e.target.parentNode.parentNode;
-      console.log(parent);
-      Array.from(e.target.parentNode.parentNode.classList).find((element) => {
-        if (element !== css.slideUp) {
-          parent.classList.add(css.slideUp);
-        } else {
-          signupBtn.parentNode.classList.add(css.slideUp);
-          parent.classList.remove(css.slideUp);
-        }
-        return null;
-      });
-    });
+    function handleSlideAnimation(e) {
+      const parent = e.target.parentNode.parentNode;
+      const activeParent = document.querySelector(`form:not(.${css.slideUp})`);
 
-    signupBtn.addEventListener("click", (e) => {
-      let parent = e.target.parentNode;
-      Array.from(e.target.parentNode.classList).find((element) => {
-        if (element !== css.slideUp) {
-          parent.classList.add(css.slideUp);
-        } else {
-          loginBtn.parentNode.parentNode.classList.add(css.slideUp);
-          parent.classList.remove(css.slideUp);
-        }
-        return null;
-      });
-    });
+      if (!parent.classList.contains(css.slideUp)) {
+        return;
+      }
+
+      activeParent.classList.add(css.slideUp);
+      parent.classList.remove(css.slideUp);
+    }
+
+    loginBtn.addEventListener("click", handleSlideAnimation);
+    signupBtn.addEventListener("click", handleSlideAnimation);
+
+    return () => {
+      loginBtn.removeEventListener("click", handleSlideAnimation);
+      signupBtn.removeEventListener("click", handleSlideAnimation);
+    };
   });
+
   return (
-    <div class={`${css.container}`}>
-      <Button primary />
-      <div class={`${css.signup}`}>
-        <h2 id="signup">
-          <span>or</span>Sign up
-        </h2>
-        <div class={`${css.fields}`}>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+    <div className={`${css.container}`}>
+      <Form className={`${css.signup}`} onSubmit={onSignUp}>
+        <div>
+          <h2 id="signup">
+            <span>or</span>Sign up
+          </h2>
+          <div className={`${css.fields}`}>
+            <input name="name" type="text" placeholder="Name" />
+            <input name="email" type="email" placeholder="Email" />
+            <input name="password" type="password" placeholder="Password" />
+            <input
+              name="retype-password"
+              type="password"
+              placeholder="Retype Password"
+            />
+          </div>
+
+          <LoadingButton ref={_loadingBtn} sematic="primary fluid button">
+            Sign up
+          </LoadingButton>
         </div>
-        <button>Sign up</button>
-      </div>
-      <div class={[css.login, css.slideUp].join(" ")}>
-        <div class={`${css.center}`}>
+      </Form>
+      <Form className={[css.login, css.slideUp].join(" ")} onSubmit={onLogin}>
+        <div className={`${css.center}`}>
           <h2 id="login">
             <span>or</span>Log in
           </h2>
-          <div class={`${css.fields}`}>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+          <div className={`${css.fields}`}>
+            <input name="email" type="email" placeholder="Email" />
+            <input name="password" type="password" placeholder="Password" />
           </div>
-          <button>Log in</button>
+          <LoadingButton ref={_loadingBtn} sematic="primary fluid button">
+            Log in
+          </LoadingButton>
         </div>
-      </div>
+      </Form>
     </div>
   );
 };

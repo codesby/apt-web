@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 $primary-color: #a1d5b1;
-$secondary-color: #D0ECD9;
+$secondary-color: #d0ecd9;
 $background-color: #f6f8ff;
+$red: #e28185;
 $font-family: "Poppins";
 :root {
   --primary-color: #{$primary-color};
   --secondary-color: #{$secondary-color};
+  --red: #{$red};
 }
 
 /* Box sizing rules */

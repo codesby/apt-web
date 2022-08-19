@@ -1,12 +1,14 @@
 import React, { PureComponent } from "react";
 import * as css from "./css.module.scss";
+import Loader from "components/loader";
+
 class Layout extends PureComponent {
   state = {
-    loading: true,
+    loading: this.props.loading,
     loadingMessage: "",
   };
 
-  loading = (loading, loadingMessage) => {
+  loading = (loading, loadingMessage = "") => {
     this.setState({ loading, loadingMessage });
     return this;
   };
@@ -15,6 +17,7 @@ class Layout extends PureComponent {
     return (
       <section className={css.layout}>
         <main>{props.children}</main>
+        <Loader active={state.loading} msg={state.msg} />
       </section>
     );
   }

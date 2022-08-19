@@ -21,20 +21,6 @@
   position: relative;
   overflow: hidden;
 
-  &::after {
-    content: "";
-    opacity: 0.8;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    // background-repeat: no-repeat;
-    // background-position: left bottom;
-    // background-size: 1480px;
-    // background-image: url("images/living-room.jpg");
-  }
-
   .signup {
     position: absolute;
     top: 50%;
@@ -108,29 +94,6 @@
         &::-webkit-input-placeholder {
           color: rgba(0, 0, 0, 0.4);
         }
-      }
-    }
-
-    button {
-      background-color: var(--primary-color);
-      color: rgba(256, 256, 256, 0.7);
-      border: 0;
-      border-radius: 15px;
-      display: block;
-      margin: 15px auto;
-      padding: 15px 45px;
-      width: 100%;
-      font-size: 13px;
-      font-weight: bold;
-      cursor: pointer;
-      opacity: 1;
-      visibility: visible;
-      transition: all 0.3s ease;
-
-      &:hover {
-        transition: all 0.3s ease;
-        background-color: var(--primary-color);
-        opacity: 0.8;
       }
     }
   }
@@ -209,28 +172,6 @@
           &::-webkit-input-placeholder {
             color: rgba(0, 0, 0, 0.4);
           }
-        }
-      }
-
-      button {
-        background-color: #6b92a4;
-        color: rgba(256, 256, 256, 0.7);
-        border: 0;
-        border-radius: 15px;
-        display: block;
-        margin: 15px auto;
-        padding: 15px 45px;
-        width: 100%;
-        font-size: 13px;
-        font-weight: bold;
-        cursor: pointer;
-        opacity: 1;
-        visibility: visible;
-        transition: all 0.3s ease;
-
-        &:hover {
-          transition: all 0.3s ease;
-          background-color: rgba(0, 0, 0, 0.8);
         }
       }
     }

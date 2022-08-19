@@ -1,0 +1,148 @@
+.button {
+  border: 0;
+  border-radius: 10px;
+  display: block;
+  margin: 15px auto;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  &.fluid {
+    width: 100%;
+  }
+  &:hover {
+    transition: all 0.3s ease;
+    opacity: 0.8;
+  }
+  &.primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    &:hover {
+      background-color: var(--primary-color);
+    }
+  }
+  &.seconday {
+    background-color: var(--secondary-color);
+    color: #fff;
+    &:hover {
+      background-color: var(--secondary-color);
+    }
+  }
+  &:disabled {
+    background-color: #ecfcef;
+    color: #a6cdc0;
+  }
+  svg {
+    width: 32px;
+    height: 32px;
+    display: none;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 1.5;
+    opacity: var(--svg-o, 0);
+    transform: translateY(var(--svg-y, -16px)) rotate(-90deg)
+      scale(var(--svg-s, 0.7)) translateZ(0);
+    transition: transform 0.3s, opacity 0.3s;
+    circle {
+      &:first-child {
+        stroke-opacity: 0.1;
+      }
+      &:last-child {
+        stroke-dasharray: 38px;
+        stroke-dashoffset: 114px;
+      }
+    }
+  }
+  span {
+    display: inline-block;
+    opacity: var(--span-o, 1);
+    transform: translateY(var(--span-y, 0)) scale(var(--span-s, 1))
+      translateZ(0);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  &.loading {
+    --svg-y: 0;
+    --svg-s: 1;
+    --svg-o: 1;
+    --span-y: 16px;
+    --span-s: 0.7;
+    --span-o: 0;
+    pointer-events: none;
+    background-color: #ecfcef;
+    color: #a6cdc0;
+    svg {
+      display: block;
+      circle {
+        &:last-child {
+          animation: load 1.2s infinite 0.3s;
+        }
+      }
+    }
+
+    span {
+      display: none;
+    }
+  }
+}
+@keyframes tick {
+  70%,
+  80% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes line {
+  70% {
+    transform: scaleX(0.8);
+  }
+}
+
+@keyframes flip {
+  25% {
+    transform: translateY(8px);
+  }
+  35% {
+    transform: translateY(12px);
+  }
+  65% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(-12px) scale(0);
+  }
+}
+
+@keyframes load {
+  from {
+    stroke-dashoffset: 114px;
+  }
+  to {
+    stroke-dashoffset: 38px;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-out {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes cursor {
+  50% {
+    opacity: 1;
+  }
+}

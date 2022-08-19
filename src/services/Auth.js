@@ -5,16 +5,18 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
  * A class use to authenticate a user using your prefered authentication method.
  */
 class Auth {
+  constructor() {
+    this.auth = getAuth();
+  }
   /**
-   * @param {boolean} flag
    * @returns
    *
    *  Returns truety value if the user is authenticated, or a  falsey value if they are not.
    */
 
   isLoggedIn = () => {
-    const auth = getAuth();
-    const user = auth.currentUser;
+    const user = this.auth.currentUser;
+    console.log(user);
     if (user) return true;
     return false;
   };
@@ -29,7 +31,7 @@ class Auth {
 
   login = ({ email, password }) => {
     return new Promise((resolve, reject) => {
-      const auth = getAuth();
+      const auth = this.auth;
       signInWithEmailAndPassword(auth, email, password)
         .then((credentials) => resolve(credentials.user))
         .catch((error) => reject(error));
@@ -38,7 +40,7 @@ class Auth {
   logout = () => {
     return new Promise(async (resolve, reject) => {
       try {
-        const auth = getAuth();
+        const auth = this.auth;
         await signOut(auth);
         resolve(true);
       } catch (error) {
@@ -47,7 +49,7 @@ class Auth {
     });
   };
   onChange = (cb) => {
-    const auth = getAuth();
+    const auth = this.auth;
     onAuthStateChanged(auth, (user) => {
       if (user) return cb(user);
       cb(null);

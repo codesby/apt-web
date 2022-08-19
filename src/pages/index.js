@@ -14,6 +14,5 @@ const IndexPage = ({ location: page }) => {
 export default IndexPage;
 
 export const Head = (props) => {
-  console.log(props);
   return <title>Apt Home Assistant</title>;
 };
