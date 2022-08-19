@@ -26,6 +26,11 @@ const Device = ({ deviceName }) => {
       <p className={css.deviceName}>{deviceName}</p>
       <div className={css.semiCircleDiv}>
         <p>Some text</p>
+        <p className={css.temperature}>
+          21
+          <span className={css.celsiusSymbol}>°C</span>
+        </p>
+        <p className={css.temperatureText}>TEMPERATURE</p>
       </div>
       <div className={css.slantDiv}>
         <div style={{ verticalAlign: "center" }}>

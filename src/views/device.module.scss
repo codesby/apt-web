@@ -12,10 +12,10 @@
 
 .semiCircleDiv {
   background: #f8f9f5;
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
   position: relative;
-  left: 50px;
+  left: 0px;
   border-top-right-radius: 50%;
   border-top-left-radius: 50%;
   z-index: -1;
@@ -27,6 +27,37 @@
   border: 2px solid red;
   margin: 5px;
   text-align: center;
+}
+
+.temperature {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 69px;
+  color: #435e52;
+}
+
+.temperatureText {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  text-align: center;
+  color: #435e52;
+  margin-top: -5px;
+}
+
+.celsiusSymbol {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 39px;
+  text-align: center;
+  color: #93a99b;
+  vertical-align: top;
+  position: relative;
+  top: 5px;
 }
 
 .slantDiv {
