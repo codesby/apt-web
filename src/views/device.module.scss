@@ -60,6 +60,29 @@
   top: 5px;
 }
 
+.ACInfoDiv {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 30% 10%;
+}
+
+.roomButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 0px;
+  background: #a1d5b1;
+  color: white;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  border-radius: 32px;
+  border-width: -0px;
+  grid-column: 4;
+}
+
 .slantDiv {
   //   margin-top: 100px;
   background: #f1ccaf;
