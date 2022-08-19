@@ -45,6 +45,27 @@
   transform: skewY(-4deg);
 }
 
+.divider {
+  border-top: 1px solid whitesmoke;
+}
+
+.energyUsage {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.energyUsage > p {
+  font-family: "Poppins";
+  font-style: normal;
+  color: white;
+}
+.usageCount {
+  font-size: 18px;
+  font-weight: 700;
+}
+.usageTitle {
+  font-size: 10px;
+  font-weight: 700;
+}
 .optionsDiv {
   display: flex;
   justify-content: center;
