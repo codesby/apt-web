@@ -7,6 +7,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 class Auth {
   constructor() {
     this.auth = getAuth();
+    this.user = null;
   }
   /**
    * @returns
@@ -16,7 +17,6 @@ class Auth {
 
   isLoggedIn = () => {
     const user = this.auth.currentUser;
-    console.log(user);
     if (user) return true;
     return false;
   };
@@ -50,7 +50,7 @@ class Auth {
   };
   onChange = (cb) => {
     const auth = this.auth;
-    onAuthStateChanged(auth, (user) => {
+    return onAuthStateChanged(auth, (user) => {
       if (user) return cb(user);
       cb(null);
     });
