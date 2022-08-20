@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { getFirestore, collection } from "firebase/firestore";
 import { getDocs, query, where } from "firebase/firestore";
+import DeviceCard from "components/device-card";
+
 const Home = (props) => {
   const { context } = props;
 
@@ -28,18 +30,8 @@ const Home = (props) => {
   }, [context]);
   return (
     <section>
-      <h1>Home Screen </h1>
-
       {devices?.map((device) => (
-        <article key={device.id}>
-          <h2>{device.name}</h2>
-          <ul>
-            <li>AC: {device.state.on ? "ON" : "OFF"}</li>
-            <li>Tempreture: {device.state.temp}</li>
-            <li>Fan: {device.state.fan}</li>
-            <li>Location: {device.location}</li>
-          </ul>
-        </article>
+        <DeviceCard device={device} key={device.id} />
       ))}
     </section>
   );
