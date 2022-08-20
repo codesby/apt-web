@@ -36,7 +36,7 @@ const Range = (props) => {
     <label htmlFor="range" className={css.range}>
       <div className={css.values}>
         {rangeValues?.map((value) => (
-          <span key={value}>{value}</span>
+          <span key={value}>{value}&deg;</span>
         ))}
       </div>
       <input

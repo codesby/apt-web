@@ -1,7 +1,10 @@
-.header {
+.header,
+.footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header {
   height: 48px;
   &::before {
     position: absolute;
@@ -20,5 +23,15 @@
   }
 }
 .content {
-    margin: 10px 0;
+  margin: 10px 0;
+}
+.footer {
+  span + span {
+    background-color: #f7f7f9;
+    height: 30px;
+    border-radius: 30px;
+    font-size: 10px;
+    color: #9a9b9e;
+    padding: 0 10px;
+  }
 }
